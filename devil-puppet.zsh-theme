@@ -20,7 +20,7 @@ function _devil_puppet {
     [[ ${b} ]] && echo "%F{4}git:(%F{5}${b}%F{4}) "
   }
 
-  echo "%F{1}⤐  %F{5}%n%F{1}@%F{4}%m%f ⛥  $(get_venv)%F{1}$(get_cwd)"\
+  echo "%F{1}⤐  %F{5}%n%F{1}@%F{4}%m %f⛥  $(get_venv)%F{1}$(get_cwd)"\
        "$(get_branch)%(?..%f[%F{1}%?%f] )%F{5}✗ %f"
 }
 
