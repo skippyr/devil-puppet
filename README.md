@@ -38,7 +38,7 @@ It displays:
 The following dependencies must be installed before installing it:
 
 - **git**: it will be used to clone this repository.
-- [**Nerd Font Symbols**](https://www.nerdfonts.com/font-downloads): this font provides the pretty symbols used in the theme.
+- Noto Sans, [**Nerd Font Symbols**](https://www.nerdfonts.com/font-downloads): these fonts provide the pretty symbols used in the theme.
 
 ### Procedures
 
@@ -67,14 +67,14 @@ If you want to install and use this theme with the [`ohmyzsh`](https://github.co
 - Clone this repository using `git`:
 
 ```sh
-git clone --depth 1 https://github.com/skippyr/devil-puppet\
+git clone --depth 1 https://github.com/skippyr/devil-puppet \
                     ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/devil-puppet;
 ```
 
 - Apply the theme in `~/.zshrc` configuration by setting the `ZSH_THEME` variable:
 
 ```zsh
-ZSH_THEME="devil-puppet/devil-puppet";
+ZSH_THEME=devil-puppet/devil-puppet;
 ```
 
 - Reopen `zsh`.
