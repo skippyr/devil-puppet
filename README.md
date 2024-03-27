@@ -1,71 +1,113 @@
-# Devil Puppet
-## About
-This repository contains the source code of Devil Puppet, a theme for the ZSH shell that is decorated by a pentagram.
+<p align="center">
+    <img alt="" src="assets/ornament.webp" />
+</p>
+<h1 align="center">≥v≥v&ensp;devil-puppet&ensp;≥v≥v</h1>
+<p align="center">
+    <img alt="" src="https://img.shields.io/github/license/skippyr/devil-puppet?style=plastic&label=%E2%89%A5%20license&labelColor=%2324130e&color=%23b8150d" />
+    &nbsp;
+    <img alt="" src="https://img.shields.io/github/v/tag/skippyr/devil-puppet?style=plastic&label=%E2%89%A5%20tag&labelColor=%2324130e&color=%23b8150d" />
+    &nbsp;
+    <img alt="" src="https://img.shields.io/github/commit-activity/t/skippyr/devil-puppet?style=plastic&label=%E2%89%A5%20commits&labelColor=%2324130e&color=%23b8150d" />
+    &nbsp;
+    <img alt="" src="https://img.shields.io/github/stars/skippyr/devil-puppet?style=plastic&label=%E2%89%A5%20stars&labelColor=%2324130e&color=%23b8150d" />
+</p>
 
-Here is a preview that you can check it out:
+## ❡ About
 
-![](preview.png)
+A theme for the ZSH shell that is decorated by a pentagram.
 
-> [!NOTE]
-> This theme uses the terminal emulator's colors, so they may look different in your setup when compared to the preview.
+<p align="center">
+    <img alt="" src="assets/preview.webp" />
+</p>
+<p align="center"><sup><strong>Caption:</strong> a preview of devil-puppet applied on <code>zsh</code>. The terminal theme used is <a href="https://github.com/skippyr/flamerial">Flamerial</a> and font is <a href="https://github.com/tonsky/FiraCode">Fira Code</a>.</sup></p>
 
 ### Features
-This theme can show you:
+
+It displays:
 
 - Your host and user name.
-- The name of sourced virtual environments.
+- The name of sourced Python virtual environments.
 - The path of the directory you are in, abbreviating parent directory names by their initials.
 - When inside a Git repository, the active branch.
 - The exit code of failed commands.
 
-## Installation
+## ❡ Install
+
 ### Dependencies
-In order to install and run this software properly, the following dependencies must be installed:
 
-- `ZSH`: this is the shell this themes applies on.
-- `git`: it will be used to both clone this repository and also to obtain info about your Git repositories to show in the prompt.
-- [A Nerd Font's font](https://www.nerdfonts.com/font-downloads) and [an emojis font](https://fonts.google.com/noto/specimen/Noto+Emoji): they provide the pretty symbols used in the prompt.
+The following dependencies must be installed before installing it:
 
-### Stand-alone Procedures (recommended for most users)
-These steps are intended for users that want to perform a stand-alone install of this theme. As it does not need any extra dependency, it is the recommended option for most users.
+- **git**: it will be used to clone this repository.
+- [**Nerd Font Symbols**](https://www.nerdfonts.com/font-downloads): this font provides the pretty symbols used in the theme.
 
-- Clone this repository using `git`.
+### Procedures
 
-```bash
+#### Manual Procedures
+
+If you want to install this theme without a plugin manager or for a specific framework, using a terminal, follow these steps:
+
+- Clone this repository using `git`:
+
+```sh
+git clone --depth 1 ~/.config/zsh/themes/devil-puppet;
+```
+
+- Source the file `devil-puppet.zsh-theme` that is inside of the repository you just cloned in your `~/.zshrc` configuration file:
+
+```zsh
+source ~/.config/zsh/themes/devil-puppet/devil-puppet.zsh-theme;
+```
+
+- Reopen `zsh`.
+
+#### Procedures For OhMyZSH
+
+If you want to install and use this theme with the [`ohmyzsh`](https://github.com/ohmyzsh/ohmyzsh) framework, using a terminal, follow these steps:
+
+- Clone this repository using `git`:
+
+```sh
 git clone --depth 1 https://github.com/skippyr/devil-puppet\
-                    ~/.local/share/zsh/themes/devil-puppet
+                    ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/devil-puppet;
 ```
 
-- Add the following source rule to your `~/.zshrc` file. Ensure to not source any other theme to avoid conflicts.
+- Apply the theme in `~/.zshrc` configuration by setting the `ZSH_THEME` variable:
 
-```bash
-source ~/.local/share/zsh/themes/devil-puppet/devil-puppet.zsh-theme
+```zsh
+ZSH_THEME="devil-puppet/devil-puppet";
 ```
 
-- Open a new ZSH session. The theme should now be installed and running.
+- Reopen `zsh`.
 
-### OhMyZSH Procedures
-These procedures are intended for users that want to use this theme within the OhMyZSH framework.
+#### Procedures For Antidote
 
-- Install [OhMyZSH](https://github.com/ohmyzsh/ohmyzsh).
-- Clone this repository using `git` to OhMyZSH's custom themes directory.
+If you want to install this theme with the [`antidote`](https://github.com/mattmc3/antidote) plugin manager, using a terminal, follow these steps:
 
-```bash
-git clone --depth 1\
-  https://github.com/skippyr/devil-puppet\
-  "${ZSH_CUSTOM:-${HOME}/.oh-my-zsh/custom}/themes/devil-puppet"
+- Add this repository to your plugins file, usually `~/.zsh_plugins.txt`.
+
+```
+skippyr/devil-puppet
 ```
 
-- Change the value of the `ZSH_THEME` variable in your `~/.zshrc` file to use the theme.
+- Use `antidote` to load your plugins.
 
-```bash
-ZSH_THEME=devil-puppet/devil-puppet
+```zsh
+antidote load ~/.zsh_plugins.txt;
 ```
 
-- Open a new ZSH session. The theme should now be installed and running.
+## ❡ Help
 
-## Support
-If you need any kind of support, for instance: help with troubleshooting, have questions about it or want to give improvement suggestions, please report them by filing new issues in its [issues page](https://github.com/skippyr/devil-puppet/issues).
+If you need help related to this project, open a new issue in its [issues pages](https://github.com/skippyr/devil-puppet/issues) or send me an [e-mail](mailto:skippyr.developer@gmail.com) describing what is going on.
 
-## Copyright
-This software is under the BSD-3-Clause license. A copy of the license is bundled with the source code.
+## ❡ Contributing
+
+This project is open to review and possibly accept contributions, specially fixes and suggestions. If you are interested, send your contribution to its [pull requests page](https://github.com/skippyr/devil-puppet/pulls) or to my [e-mail](mailto:skippyr.developer@gmail.com).
+
+By contributing to this project, you agree to license your work under the same license that the project uses.
+
+## ❡ License
+
+This project is licensed under the BSD-3-Clause License. Refer to the `LICENSE` file that comes in its source code for license and copyright details.
+
+&ensp;
+<p align="center"><sup><strong>≥v≥v&ensp;Here Be Dragons!&ensp;≥v≥</strong><br />Made with love by skippyr <3</sup></p>

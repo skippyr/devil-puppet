@@ -1,27 +1,31 @@
-export VIRTUAL_ENV_DISABLE_PROMPT=1
+export VIRTUAL_ENV_DISABLE_PROMPT=1;
 
-setopt promptsubst
+setopt promptsubst;
 
-function _devil_puppet {
-  function get_venv {
-    [[ ${VIRTUAL_ENV} ]] && echo "(${VIRTUAL_ENV##*/}) "
-  }
-
-  function get_cwd {
-    d=("${(s./.)PWD/${HOME}/~}")
-    [[ ${#d} -gt 1 ]] && for i in {1..$((${#d} - 1))}; do
-      [[ ${d[i]} == .* ]] && d[i]=${d[i][1,2]} || d[i]=${d[i][1]}
-    done
-    echo ${(j./.)d}
-  }
-
-  function get_branch {
-    b=$(git branch --show-current 2>/dev/null)
-    [[ ${b} ]] && echo "%F{4}git:(%F{5}${b}%F{4}) "
-  }
-
-  echo "%F{1}⤐  %F{5}%n%F{1}@%F{4}%m %f⛥  $(get_venv)%F{1}$(get_cwd)"\
-       "$(get_branch)%(?..%f[%F{1}%?%f] )%F{5}✗ %f"
+function _devilPuppet_writeVirtualEnvModule
+{
+    [[ ${VIRTUAL_ENV} ]] && echo "(${VIRTUAL_ENV##*/}) ";
 }
 
-PROMPT='$(_devil_puppet)'
+function _devilPuppet_writePathModule
+{
+    pathSplits=("${(s./.)PWD/${HOME}/~}");
+    [[ ${#pathSplits} -gt 1 ]] &&
+        for index in {1..$((${#pathSplits} - 1))};
+        do
+            [[ ${pathSplits[index]} == .* ]] &&
+                pathSplits[index]=${pathSplits[index][1,2]} ||
+                pathSplits[index]=${pathSplits[index][1]};
+        done
+    echo ${(j./.)pathSplits};
+}
+
+function _devilPuppet_writeGitModule
+{
+    branch=$(git branch --show-current 2>/dev/null);
+    [[ ${branch} ]] && echo "%F{blue}git:(%F{magenta}${branch}%F{blue}) ";
+}
+
+PROMPT='%F{red}⤐  %F{magenta}%n%F{red}@%F{blue}%m %f⛥  $(_devilPuppet_writeVirtualEnvModule)\
+%F{red}$(_devilPuppet_writePathModule) $(_devilPuppet_writeGitModule)%(?..%f[%F{red}%?%f] )\
+%F{magenta}✗ %f';
