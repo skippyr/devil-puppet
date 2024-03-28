@@ -26,6 +26,5 @@ function _devilPuppet_writeGitModule
     [[ ${branch} ]] && echo "%F{blue}git:(%F{magenta}${branch}%F{blue}) ";
 }
 
-PROMPT='%F{red}⤐  %F{magenta}%n%F{red}@%F{blue}%m %f⛥  $(_devilPuppet_writeVirtualEnvModule)\
-%F{red}$(_devilPuppet_writePathModule) $(_devilPuppet_writeGitModule)%(?..%f[%F{red}%?%f] )\
-%F{magenta}✗ %f';
+PROMPT='%F{red}⤐  %F{magenta}%n%F{red}@%F{blue}%m %f⛥  $(_devilPuppet_writeVirtualEnvModule)%F{red}\
+$(_devilPuppet_writePathModule) $(_devilPuppet_writeGitModule)%(?..%f[%F{red}%?%f] )%F{magenta}✗ %f';
