@@ -9,12 +9,12 @@ _devil_puppet_write_virtual_env_module() {
 _devil_puppet_write_path_module() {
   path_splits=("${(s./.)PWD/${HOME}/~}");
   [[ ${#path_splits} -gt 1 ]] &&
-    for index in {1..$((${#path_splits} - 1))};
-    do
-      [[ ${path_splits[index]} == .* ]] &&
-        path_splits[index]=${path_splits[index][1,2]} ||
-        path_splits[index]=${path_splits[index][1]};
-    done
+      for index in {1..$((${#path_splits} - 1))};
+      do
+        [[ ${path_splits[index]} == .* ]] &&
+            path_splits[index]=${path_splits[index][1,2]} ||
+            path_splits[index]=${path_splits[index][1]};
+      done
   echo ${(j./.)path_splits};
 }
 
