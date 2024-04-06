@@ -2,8 +2,9 @@ setopt promptsubst;
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1;
 
-_devil_puppet_write_virtual_env_module() {
-  [[ ${VIRTUAL_ENV} ]] && echo "(${VIRTUAL_ENV##*/}) ";
+_devil_puppet_write_git_module() {
+  branch=$(git branch --show-current 2>/dev/null);
+  [[ ${branch} ]] && echo "%F{blue}git:(%F{magenta}${branch}%F{blue}) ";
 }
 
 _devil_puppet_write_path_module() {
@@ -18,9 +19,8 @@ _devil_puppet_write_path_module() {
   echo ${(j./.)path_splits};
 }
 
-_devil_puppet_write_git_module() {
-  branch=$(git branch --show-current 2>/dev/null);
-  [[ ${branch} ]] && echo "%F{blue}git:(%F{magenta}${branch}%F{blue}) ";
+_devil_puppet_write_virtual_env_module() {
+  [[ ${VIRTUAL_ENV} ]] && echo "(${VIRTUAL_ENV##*/}) ";
 }
 
 PROMPT='%F{red}⤐  %F{magenta}%n%F{red}@%F{blue}%m %f⛥  \
