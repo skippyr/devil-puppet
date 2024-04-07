@@ -38,7 +38,7 @@ It displays:
 The following dependencies must be installed before installing it:
 
 - **git**: it will be used to clone this repository.
-- **Noto Sans**, [**Nerd Font Symbols**](https://www.nerdfonts.com/font-downloads): these fonts provide the pretty symbols used in the theme.
+- **Noto Sans**, [**Nerd Font Symbols**](https://www.nerdfonts.com/font-downloads): these fonts provide the pretty symbols used by the theme.
 
 ### Procedures
 
